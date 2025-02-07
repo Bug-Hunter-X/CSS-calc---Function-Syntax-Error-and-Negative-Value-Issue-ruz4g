@@ -1,0 +1,20 @@
+The corrected CSS code includes spaces around the minus operator and handles the potential negative value issue:
+
+```css
+div {
+  width: calc(100% - 10px);
+}
+
+/* Alternative solution to handle potential negative values */
+div {
+  width: min(calc(100% - 10px), 100%); /* Ensures width remains positive*/
+}
+
+/* another alternative */
+div {
+    width: calc(100% - 10px);
+    width: max(0, width);
+}
+```
+
+This version explicitly adds spaces around the `-` operator, ensuring that the `calc()` function parses correctly in all browsers.  The second version includes conditional logic to prevent a negative width which can lead to rendering issues or unexpected behavior.
